@@ -25,6 +25,7 @@
     "topojson": "latest"
   },
   "devDependencies": {
+    "grunt-contrib-clean": "latest",
     "grunt-contrib-watch": "latest"
   }
 }

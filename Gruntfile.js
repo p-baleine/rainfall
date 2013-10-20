@@ -48,8 +48,18 @@ module.exports = function(grunt) {
         ignoredFiles: ['lib/client/**/*.js'],
         watchedExtensions: ['js']
       }
+    },
+
+    clean: {
+      dev: ['public']
     }
 
   });
+
+  grunt.registerTask('build:dev', [
+    'clean:dev',
+    'browserify:dev',
+    'less:dev'
+  ]);
 
 };
