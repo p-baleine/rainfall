@@ -6,5 +6,5 @@ Visalization of rainfall data with D3.js.
 
 ```bash
 $ grunt build:dev # compile client js and less files.
-$ node app        # start dev server
+$ grunt nodemon   # start dev server
 ```
