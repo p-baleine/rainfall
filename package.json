@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "./node_modules/.bin/bower install && grunt build:dev"
+    "prepublish": "./node_modules/.bin/bower install"
   },
   "repository": {
     "type": "git",
@@ -20,14 +20,15 @@
     "express": "latest",
     "grunt": "latest",
     "grunt-browserify": "latest",
+    "grunt-contrib-clean": "latest",
     "grunt-contrib-less": "latest",
+    "grunt-env": "latest",
     "grunt-nodemon": "latest",
     "jade": "latest",
     "matchdep": "latest",
     "topojson": "latest"
   },
   "devDependencies": {
-    "grunt-contrib-clean": "latest",
     "grunt-contrib-watch": "latest"
   }
 }

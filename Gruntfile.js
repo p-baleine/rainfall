@@ -25,6 +25,11 @@ module.exports = function(grunt) {
           debug: true
         }
       },
+      prod: {
+        files: {
+          'public/application.js': ['lib/client/boot.js']
+        }
+      },
       options: {
         shim: {
           topojson: {
@@ -43,23 +48,45 @@ module.exports = function(grunt) {
       }
     },
 
-    nodemon: {
+    env: {
       dev: {
+        NODE_ENV: 'development',
+        PORT: 3000,
+        src: 'credentials.json'
+      },
+      heroku: {
+        src: '.env'
+      }
+    },
+
+    nodemon: {
+      app: {
         ignoredFiles: ['lib/client/**/*.js'],
         watchedExtensions: ['js']
       }
     },
 
     clean: {
-      dev: ['public']
+      app: ['public']
     }
 
   });
 
   grunt.registerTask('build:dev', [
-    'clean:dev',
+    'clean',
     'browserify:dev',
     'less:dev'
+  ]);
+
+  grunt.registerTask('devsrv', [
+    'env:dev',
+    'nodemon'
+  ]);
+
+  grunt.registerTask('heroku:production', [
+    'clean',
+    'browserify:prod',
+    'less'
   ]);
 
 };
