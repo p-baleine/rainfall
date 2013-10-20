@@ -4,7 +4,8 @@
   "description": "Visalization of rainfall data with D3.js.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "./node_modules/.bin/bower install && grunt build:dev"
   },
   "repository": {
     "type": "git",
@@ -13,6 +14,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "bower": "latest",
     "d3": "latest",
     "browserify": "latest",
     "express": "latest",
