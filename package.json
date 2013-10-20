@@ -1,0 +1,30 @@
+{
+  "name": "rainfall",
+  "version": "0.0.1",
+  "description": "Visalization of rainfall data with D3.js.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:p-baleine/rainfall.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "d3": "latest",
+    "browserify": "latest",
+    "express": "latest",
+    "grunt": "latest",
+    "grunt-browserify": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-nodemon": "latest",
+    "jade": "latest",
+    "matchdep": "latest",
+    "topojson": "latest"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "latest"
+  }
+}
