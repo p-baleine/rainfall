@@ -74,6 +74,10 @@ module.exports = function(grunt) {
       app: ['public']
     },
 
+    cucumberjs: {
+      files: 'features'
+    },
+
     mochacli: {
       options: {
         ui: 'bdd',

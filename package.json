@@ -30,10 +30,13 @@
   },
   "devDependencies": {
     "chai": "latest",
+    "cucumber": "latest",
     "grunt-contrib-watch": "latest",
+    "grunt-cucumber": "latest",
     "grunt-mocha-cli": "latest",
     "mocha": "latest",
     "sinon": "latest",
-    "sinon-chai": "latest"
+    "sinon-chai": "latest",
+    "zombie": "latest"
   }
 }
