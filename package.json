@@ -29,6 +29,11 @@
     "topojson": "latest"
   },
   "devDependencies": {
-    "grunt-contrib-watch": "latest"
+    "chai": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-mocha-cli": "latest",
+    "mocha": "latest",
+    "sinon": "latest",
+    "sinon-chai": "latest"
   }
 }

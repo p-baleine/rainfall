@@ -13,6 +13,10 @@ module.exports = function(grunt) {
       less: {
         files: ['less/**/*.less'],
         tasks: ['less']
+      },
+      mochacli: {
+        files: ['spec/**/*.spec.js'],
+        tasks: ['mochacli']
       }
     },
 
@@ -68,6 +72,17 @@ module.exports = function(grunt) {
 
     clean: {
       app: ['public']
+    },
+
+    mochacli: {
+      options: {
+        ui: 'bdd',
+        reporter: 'spec'
+      },
+
+      all: {
+        src: ['spec/**/*.spec.js']
+      }
     }
 
   });
