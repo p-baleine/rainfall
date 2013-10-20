@@ -1,4 +1,4 @@
-# rainfall
+# rainfall [![Build Status](https://travis-ci.org/p-baleine/rainfall.png?branch=master)](https://travis-ci.org/p-baleine/rainfall)
 
 Visalization of rainfall data with D3.js.
 
