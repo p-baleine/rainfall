@@ -5,6 +5,7 @@
 
 var chai = require('chai'),
     expect = chai.expect,
+    nock = require('nock'),
     sinon = require('sinon'),
     sinonChai = require('sinon-chai'),
     request = require('supertest');

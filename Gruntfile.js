@@ -18,9 +18,9 @@ module.exports = function(grunt) {
         files: ['less/**/*.less'],
         tasks: ['less']
       },
-      mochacli: {
-        files: ['spec/**/*.spec.js'],
-        tasks: ['mochacli']
+      unit: {
+        files: ['lib/**/*.js', 'spec/**/*.spec.js'],
+        tasks: ['unit']
       }
     },
 
@@ -115,11 +115,18 @@ module.exports = function(grunt) {
     'nodemon'
   ]);
 
+  // unit tests.
+  grunt.registerTask('unit', [
+    'env:dev',
+    'mochacli'
+  ]);
+
   // ci tasks.
   grunt.registerTask('ci', [
     'clean',
     'browserify:dev',
     'less:dev',
+    'env:dev',
     'mochacli',
     'cucumberjs'
   ]);

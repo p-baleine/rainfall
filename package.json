@@ -27,6 +27,7 @@
     "grunt-nodemon": "latest",
     "jade": "latest",
     "matchdep": "latest",
+    "request": "latest",
     "topojson": "latest"
   },
   "devDependencies": {
@@ -36,6 +37,7 @@
     "grunt-cucumber": "latest",
     "grunt-mocha-cli": "latest",
     "mocha": "latest",
+    "nock": "latest",
     "sinon": "latest",
     "sinon-chai": "latest",
     "supertest": "latest",
