@@ -8,8 +8,7 @@ var chai = require('chai'),
     nock = require('nock'),
     sinon = require('sinon'),
     sinonChai = require('sinon-chai'),
-    requestRainfall = require('../../lib/rainfall/request-rainfall'),
-    querystring = require('querystring');
+    requestRainfall = require('../../lib/rainfall/request-rainfall');
 
 describe('request-rainfall', function() {
 
