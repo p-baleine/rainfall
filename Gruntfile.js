@@ -6,6 +6,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     watch: {
+      jshint: {
+        files: ['Gruntfile.js', 'app.js', 'lib/**/*.js'],
+        tasks: ['jshint']
+      },
       browserify: {
         files: ['lib/client/**/*.js'],
         tasks: ['browserify']
@@ -87,21 +91,40 @@ module.exports = function(grunt) {
       all: {
         src: ['spec/**/*.spec.js']
       }
+    },
+
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc'
+      },
+      all: ['Gruntfile.js', 'app.js', 'lib/**/*.js']
     }
 
   });
 
+  // compile client js and less files.
   grunt.registerTask('build:dev', [
     'clean',
     'browserify:dev',
     'less:dev'
   ]);
 
+  // start development server.
   grunt.registerTask('devsrv', [
     'env:dev',
     'nodemon'
   ]);
 
+  // ci tasks.
+  grunt.registerTask('ci', [
+    'clean',
+    'browserify:dev',
+    'less:dev',
+    'mochacli',
+    'cucumberjs'
+  ]);
+
+  // prepare production assets for heroku.
   grunt.registerTask('heroku:production', [
     'clean',
     'browserify:prod',

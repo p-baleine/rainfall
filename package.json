@@ -22,6 +22,7 @@
     "grunt-browserify": "latest",
     "grunt-contrib-clean": "latest",
     "grunt-contrib-less": "latest",
+    "grunt-contrib-jshint": "latest",
     "grunt-env": "latest",
     "grunt-nodemon": "latest",
     "jade": "latest",
@@ -37,6 +38,7 @@
     "mocha": "latest",
     "sinon": "latest",
     "sinon-chai": "latest",
+    "supertest": "latest",
     "zombie": "latest"
   }
 }

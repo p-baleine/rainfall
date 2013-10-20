@@ -5,7 +5,7 @@
 
 var express = require("express");
 
-var app = exports = module.exports = express();
+var app = module.exports = express();
 
 // settings
 
