@@ -8,16 +8,16 @@ var chai = require('chai'),
     nock = require('nock'),
     sinon = require('sinon'),
     sinonChai = require('sinon-chai'),
+    config = require('../../lib/config'),
+    setupConfig = require('../setup-config'),
     requestRainfall = require('../../lib/rainfall/request-rainfall');
 
 describe('request-rainfall', function() {
 
+  setupConfig();
+
   it('should be a function', function() {
     expect(requestRainfall).to.be.a('function');
-  });
-
-  it('should return result via passed callback', function(done) {
-    requestRainfall(done);
   });
 
   describe('path()', function() {
@@ -28,7 +28,7 @@ describe('request-rainfall', function() {
 
     it('should specify `appid` from environment var', function() {
       expect(requestRainfall.path('12,34').match(/appid=([^&]+)/)[1])
-        .to.equal(process.env.YAHOO_APP_ID);
+        .to.equal(config.YAHOO_APP_ID);
     });
 
   });
@@ -38,9 +38,13 @@ describe('request-rainfall', function() {
     describe('when request is success', function() {
 
       beforeEach(function() {
-        this.scope = nock(requestRainfall.YAHOO_API_URL)
+        this.scope = nock(config.YAHOO_API_URL)
           .get(requestRainfall.path('139.732293,35.663613'))
           .reply(200, { hello: 'world' });
+      });
+
+      it('should return result via passed callback', function(done) {
+        requestRainfall(done);
       });
 
       it('should request to yahoo api', function(done) {
@@ -55,7 +59,7 @@ describe('request-rainfall', function() {
     describe('when error is occurred', function() {
 
       beforeEach(function() {
-        this.scope = nock(requestRainfall.YAHOO_API_URL)
+        this.scope = nock(config.YAHOO_API_URL)
           .get(requestRainfall.path('139.732293,35.663613'))
           .reply(500);
       });

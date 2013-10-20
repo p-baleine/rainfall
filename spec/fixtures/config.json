@@ -1,0 +1,6 @@
+{
+  "PORT": 3001,
+  "YAHOO_APP_ID": "myid",
+  "YAHOO_APP_SECRET": "mysecret",
+  "YAHOO_API_URL": "http://weather.olp.yahooapis.jp"
+}

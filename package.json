@@ -28,7 +28,8 @@
     "jade": "latest",
     "matchdep": "latest",
     "request": "latest",
-    "topojson": "latest"
+    "topojson": "latest",
+    "underscore": "latest"
   },
   "devDependencies": {
     "chai": "latest",
